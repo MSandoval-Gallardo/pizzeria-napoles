@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzería IL CORNICELLO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-pizza-slice"></i> Pizzería IL CORNICELLO</h1>
+        <p class="subtitle">Le Recette della Nonna</p>
+    </header>
+    
+    <div class="container">
+        <div class="nav-tabs">
+            <button class="tab active" data-tab="menu">Menú de Pizzas</button>
+            <button class="tab" data-tab="admin">Panel de Administración</button>
+        </div>
+        
+        <!-- Sección del menú de pizzas -->
+        <div id="menu" class="tab-content active">
+            <h2>Nuestro Menú</h2>
+            <p>Descubre nuestra deliciosa selección de pizzas artesanales. Todas nuestras pizzas están hechas con masa fresca y ingredientes de la más alta calidad.</p>
+            
+            <div class="pizza-grid" id="pizza-menu">
+                <!-- Las pizzas se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+        
+        <!-- Sección del panel de administración -->
+        <div id="admin" class="tab-content">
+            <h2>Panel de Administración</h2>
+            <p>Gestiona el menú de pizzas: agrega nuevas pizzas, edita las existentes, elimina o cambia el estado.</p>
+            
+            <!-- Mensajes de confirmación/error -->
+            <div id="admin-message" class="message"></div>
+            
+            <!-- Formulario para agregar/editar pizzas -->
+            <div class="admin-controls">
+                <h3 id="form-title">Agregar Nueva Pizza</h3>
+                <form id="pizza-form">
+                    <input type="hidden" id="pizza-id">
+                    
+                    <div class="form-group">
+                        <label for="pizza-name">Nombre de la Pizza:</label>
+                        <input type="text" id="pizza-name" required placeholder="Ej: Margarita, Pepperoni, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pizza-ingredients">Ingredientes:</label>
+                        <textarea id="pizza-ingredients" required placeholder="Describa los ingredientes separados por comas..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pizza-price">Precio ($):</label>
+                        <input type="number" id="pizza-price" min="0" step="0.01" required placeholder="Ej: 12.99">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pizza-image">Imagen:</label>
+                        <input type="text" id="pizza-image" placeholder="URL de la imagen o seleccione una de abajo">
+                        <div class="image-options" id="image-options">
+                            <!-- Opciones de imágenes predefinidas -->
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Agregar Pizza</button>
+                        <button type="button" class="btn btn-secondary" id="cancel-edit" style="display:none;">Cancelar Edición</button>
+                        <button type="button" class="btn" id="reset-form">Limpiar Formulario</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Lista de pizzas para administrar -->
+            <h3>Gestionar Pizzas Existentes</h3>
+            <div class="pizza-list-admin">
+                <div class="pizza-item header">
+                    <div>Nombre</div>
+                    <div>Ingredientes</div>
+                    <div>Precio</div>
+                    <div>Acciones</div>
+                </div>
+                <div id="pizza-admin-list">
+                    <!-- Las pizzas para administrar se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Pizzería Italia. Todos los derechos reservados.</p>
+        <p>Desarrollado con <i class="fas fa-heart" style="color: var(--primary-color);"></i> para amantes de la pizza</p>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+:root {
+            --primary-color: #e74c3c;
+            --secondary-color: #c0392b;
+            --light-color: #f9f9f9;
+            --dark-color: #333;
+            --gray-color: #f5f5f5;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-weight: bold;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Estilos para la sección de pizzas */
+        .pizza-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .pizza-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .pizza-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pizza-card.out-of-stock {
+            opacity: 0.7;
+            position: relative;
+        }
+        
+        .out-of-stock-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--danger-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .pizza-image {
+            height: 200px;
+            width: 100%;
+            background-color: #f8d7b5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a05a2c;
+            font-size: 3rem;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .pizza-info {
+            padding: 1.5rem;
+        }
+        
+        .pizza-ingredients {
+            color: #666;
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+            min-height: 60px;
+        }
+        
+        .pizza-price {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .pizza-status {
+            display: inline-block;
+            margin-left: 1rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .status-available {
+            background-color: #d5f4e6;
+            color: var(--success-color);
+        }
+        
+        .status-out-of-stock {
+            background-color: #fadbd8;
+            color: var(--danger-color);
+        }
+        
+        /* Estilos para el panel de administración */
+        .admin-controls {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background-color: #e67e22;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .pizza-list-admin {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .pizza-item {
+            display: grid;
+            grid-template-columns: 2fr 3fr 1fr 2fr;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        
+        .pizza-item.header {
+            font-weight: bold;
+            background-color: var(--gray-color);
+        }
+        
+        .pizza-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .status-toggle {
+            cursor: pointer;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: none;
+            font-weight: bold;
+        }
+        
+        .status-available-btn {
+            background-color: #d5f4e6;
+            color: var(--success-color);
+        }
+        
+        .status-out-of-stock-btn {
+            background-color: #fadbd8;
+            color: var(--danger-color);
+        }
+        
+        /* Mensajes y alertas */
+        .message {
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        .message.success {
+            background-color: #d5f4e6;
+            color: var(--success-color);
+            display: block;
+        }
+        
+        .message.error {
+            background-color: #fadbd8;
+            color: var(--danger-color);
+            display: block;
+        }
+        
+        .image-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .image-option {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .image-option.selected {
+            border-color: var(--primary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pizza-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .pizza-item.header {
+                display: none;
+            }
+            
+            .pizza-actions {
+                justify-content: flex-start;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .tab {
+                border-bottom: 1px solid #ddd;
+            }
+        }   
