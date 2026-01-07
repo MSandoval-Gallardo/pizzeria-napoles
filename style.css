@@ -11,13 +11,153 @@
             --border-radius: 8px;
         }
 
-        .head{
+        /* .head{
             display: flex;
             justify-content: center;
         }
         .titulo{
             padding: 20px;
-        }
+        } */
+
+        /* Estilos base para el header */
+header {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.titulo {
+    padding: 20px;
+    text-align: center;
+}
+
+.titulo h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 5px 0 0 0;
+    font-style: italic;
+}
+
+.fa-pizza-slice {
+    color: var(--primary-color);
+}
+
+/* Media Queries para responsividad */
+
+/* Tablet (768px y menos) */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .titulo {
+        padding: 15px 10px;
+    }
+    
+    .titulo h1 {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* Móvil (480px y menos) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .titulo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Pantallas muy pequeñas (360px y menos) */
+@media (max-width: 360px) {
+    .titulo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .titulo h1 i {
+        font-size: 1.1rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* Pantallas grandes (para mejor visualización) */
+@media (min-width: 1200px) {
+    .head {
+        justify-content: space-between;
+    }
+    
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .titulo {
+        padding: 25px;
+    }
+    
+    .titulo h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Efecto hover para interactividad */
+.logo:hover {
+    transform: scale(1.05);
+}
         
         * {
             margin: 0;
