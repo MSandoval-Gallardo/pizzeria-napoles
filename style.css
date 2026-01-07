@@ -1,5 +1,5 @@
 :root {
-            --primary-color: #e74c3c;
+            --primary-color: #023b81;
             --secondary-color: #c0392b;
             --light-color: #f9f9f9;
             --dark-color: #333;
@@ -10,6 +10,14 @@
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --border-radius: 8px;
         }
+
+        .head{
+            display: flex;
+            justify-content: center;
+        }
+        .titulo{
+            padding: 20px;
+        }
         
         * {
             margin: 0;
@@ -17,16 +25,25 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+        .logo{
+           max-width: 150px;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
         body {
-            background-color: #f9f9f9;
+            /* background-color: #f9f9f9; */
+             background:linear-gradient(rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.838)),url(img/pizza2.jpg);
             color: var(--dark-color);
             line-height: 1.6;
         }
         
         header {
-            background-color: var(--primary-color);
-            color: white;
+            /* background-image:  */
+            background:linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.549)),
+            url(img/pizza2.jpg);
+            background-color: var(--gray-color);
+            color: #023b81;
             padding: 1.5rem;
             text-align: center;
             box-shadow: var(--shadow);
